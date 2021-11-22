@@ -2,6 +2,14 @@ package fiftyhwang50.calendar;
 import java.util.Scanner;
 
 public class Calendar {
+	
+	//재사용을 위한 함수로 따로 구현
+	private final int[] MAX_DAYS = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};	//정수형 배열을 상수로 작성
+	public int getMaxDaysOfMonth(int month) {	//month 값으로 int를 입력받아 MAX_DAYS 배열의 특정 값을 출력하는 메소드 작성
+		return MAX_DAYS[month - 1];
+	}
+	
+	//main 실행 함수
 	public static void main(String args[]) {
 		System.out.println(" 일  월 화  수 목  금  토");
 		System.out.println("--------------------");
@@ -30,8 +38,11 @@ public class Calendar {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("최대 일 수를 알아볼 월을 입력하시오 : ");
 		int month = scanner.nextInt();
-		System.out.printf("입력하신 %d월의 최대 일수는 %d일 입니다.", month, maxDays[(month - 1)]);
+		System.out.printf("%d월의 최대 일수는 %d일 입니다.\n", month, maxDays[(month - 1)]);
 		
+		//(좀 더 나은)숫자를 입력받아 해당하는 달의 최대 일 수 출력
+		Calendar cal = new Calendar();
+		System.out.printf("입력하신 %d월의 최대 일수는 %d일 입니다.", month, cal.getMaxDaysOfMonth(month));
 		//프로그램 종료
 		scanner.close();
 	}

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Calendar_ex1 {
 	public static void main(String[] args) {
-		//숫자를 입력받아 해당하는 달의 최대 일 수를 출력받는 프로그램 
+		//숫자를 입력받아 해당하는 달의 최대 일 수를 출력받는 로직 
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("달을 입력하시오 : ");
 		int month = scanner.nextInt();
